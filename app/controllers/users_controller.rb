@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:auto_login]
 
+    # JUST FOR TESTING!!
+    def index
+        @users = Note.all
+
+        render json: @users
+    end
+
     #REGISTER
     def create
         @user = User.create(user_params)
