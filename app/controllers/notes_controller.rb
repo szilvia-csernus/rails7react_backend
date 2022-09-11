@@ -4,7 +4,7 @@ class NotesController < ApplicationController
 
   # GET /notes
   def index
-    @notes = Note.where user: @user.id
+    @notes = Note.where(user: @user)
 
     render json: @notes
   end
@@ -48,6 +48,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :body, :useer_id)
+      params.require(:note).permit(:title, :body, :user_id)
     end
 end

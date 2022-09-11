@@ -8,17 +8,25 @@
 
 User.destroy_all
 
-users = User.create([{username: "test", password: "test", age: 35},
-                    {username: "szilvi", password: "haliho", age: 45},
-                    {username: "szilvi1", password: "haliho1", age: 32},
-                    {username: "szilvi2", password: "haliho2", age: 42},
-                    {username: "szilvi3", password: "haliho3", age: 25},
-                    {username: "szilvi4", password: "haliho4", age: 15},
-                    {username: "szilvi5", password: "haliho5", age: 87},
-                    {username: "szilvi6", password: "haliho6", age: 65}])
+users = User.create([{first_name: "Test", username: "test", password: "test", age: 35},
+                    {first_name: "Szilvi", username: "szilvi", password: "haliho", age: 45},
+                    {first_name: "Szilvi", username: "szilvi1", password: "haliho1", age: 32},
+                    {first_name: "Szilvi", username: "szilvi2", password: "haliho2", age: 42},
+                    {first_name: "Szilvi", username: "szilvi3", password: "haliho3", age: 25},
+                    {first_name: "Szilvi", username: "szilvi4", password: "haliho4", age: 15},
+                    {first_name: "Szilvi", username: "szilvi5", password: "haliho5", age: 87},
+                    {first_name: "Szilvi", username: "szilvi6", password: "haliho6", age: 65}])
 
 notes = Note.create([{title: "Intelligentsia", body: "friendly teddy", user_id: User.find_by(username: "szilvi").id},
-{title: "Pinterest", body: "cuddly teddy", user_id: User.find_by(username: "szilvi1").id},
+{title: "Pinterest", 
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
+    officia deserunt mollit anim id est laborum.", 
+    user_id: User.find_by(username: "szilvi1").id},
 {title: "Paleo", body: "friendly teddy", user_id: User.find_by(username: "szilvi2").id},
 {title: "Viral", body: "fluffy teddy", user_id: User.find_by(username: "szilvi3").id},
 {title: "Everyday", body: "cuddly teddy", user_id: User.find_by(username: "szilvi4").id},

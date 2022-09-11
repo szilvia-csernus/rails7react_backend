@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:auto_login]
-
+    before_action :authorized, only: [:index, :update, :auto_login]
    
     #REGISTER
     def create
@@ -9,13 +8,24 @@ class UsersController < ApplicationController
             token = encode_token({user_id: @user.id})
             render json: {user: @user, token: token}
         else
-            render json: {error: 'Invalid username or password'}
+            render json: {error: 'Creating user unsuccessful!'}
+        end
+    end
+
+    def update
+        
+        @user = User.update(user_params)
+        if @user.valid?
+            token = encode_token({user_id: @user.id})
+            render json: {user: @user, token: token}
+        else
+            render json: {error: 'Updating password unsuccessful!'}
         end
     end
 
     #LOGGING IN
     def login
-        @user = User.find_by(username: params[:username])
+        # @user = User.find_by(username: params[:username])
 
         if @user && @user.authenticate(params[:password])
             token = encode_token({user_id: @user.id})
