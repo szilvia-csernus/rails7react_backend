@@ -8,14 +8,14 @@
 
 User.destroy_all
 
-users = User.create([{first_name: "Test", username: "test", password: "test", age: 35},
-                    {first_name: "Szilvi", username: "szilvi", password: "haliho", age: 45},
-                    {first_name: "Szilvi", username: "szilvi1", password: "haliho1", age: 32},
-                    {first_name: "Szilvi", username: "szilvi2", password: "haliho2", age: 42},
-                    {first_name: "Szilvi", username: "szilvi3", password: "haliho3", age: 25},
-                    {first_name: "Szilvi", username: "szilvi4", password: "haliho4", age: 15},
-                    {first_name: "Szilvi", username: "szilvi5", password: "haliho5", age: 87},
-                    {first_name: "Szilvi", username: "szilvi6", password: "haliho6", age: 65}])
+users = User.create([{first_name: "Test", username: "test", password: "test"},
+                    {first_name: "Szilvi", username: "szilvi", password: "haliho"},
+                    {first_name: "Szilvi", username: "szilvi1", password: "haliho1"},
+                    {first_name: "Szilvi", username: "szilvi2", password: "haliho2"},
+                    {first_name: "Szilvi", username: "szilvi3", password: "haliho3"},
+                    {first_name: "Szilvi", username: "szilvi4", password: "haliho4"},
+                    {first_name: "Szilvi", username: "szilvi5", password: "haliho5"},
+                    {first_name: "Szilvi", username: "szilvi6", password: "haliho6"}])
 
 notes = Note.create([{title: "Intelligentsia", body: "friendly teddy", user_id: User.find_by(username: "szilvi").id},
 {title: "Pinterest", 
