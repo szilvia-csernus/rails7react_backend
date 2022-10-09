@@ -12,11 +12,12 @@ class UsersController < ApplicationController
         end
     end
 
+    #CHANGE PASSWORD
     def update
         success = @user.update!(user_params)
         if success
             token = encode_token({user_id: @user.id})
-            render json: {user: @user}
+            render json: {user: @user, token: token}
         else
             render json: {error: 'Updating password unsuccessful!'}
         end

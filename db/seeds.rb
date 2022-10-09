@@ -17,8 +17,8 @@ users = User.create([{first_name: "Test", username: "test", password: "test"},
                     {first_name: "Szilvi", username: "szilvi5", password: "haliho5"},
                     {first_name: "Szilvi", username: "szilvi6", password: "haliho6"}])
 
-notes = Note.create([{title: "Intelligentsia", body: "friendly teddy", user_id: User.find_by(username: "szilvi").id},
-{title: "Pinterest", 
+notes = Note.create([{title: "First Note", body: "shopping list: milk, carrots, washing up capsules", user_id: User.find_by(username: "szilvi").id},
+{title: "Second Note", 
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -27,12 +27,12 @@ notes = Note.create([{title: "Intelligentsia", body: "friendly teddy", user_id: 
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
     officia deserunt mollit anim id est laborum.", 
     user_id: User.find_by(username: "szilvi1").id},
-{title: "Paleo", body: "friendly teddy", user_id: User.find_by(username: "szilvi2").id},
-{title: "Viral", body: "fluffy teddy", user_id: User.find_by(username: "szilvi3").id},
-{title: "Everyday", body: "cuddly teddy", user_id: User.find_by(username: "szilvi4").id},
-{title: "Hoodie", body: "friendly teddy", user_id: User.find_by(username: "szilvi5").id},
-{title: "Ethical", body: "fluffy teddy", user_id: User.find_by(username: "szilvi6").id},
-{title: "Hella", body: "cuddly teddy", user_id: User.find_by(username: "szilvi1").id},
-{title: "Butcher", body: "friendly teddy", user_id: User.find_by(username: "szilvi2").id},
-{title: "Fussili", body: "cuddly teddy", user_id: User.find_by(username: "szilvi3").id},
-{title:"Curl", body:"fluffy teddy", user_id: User.find_by(username: "szilvi1").id}])
+{title: "Third Note", body: "shopping list: milk, carrots, washing up capsules", user_id: User.find_by(username: "szilvi2").id},
+{title: "Forth Note", body: "birthday party invitees: Noah, Charlotte, Elyse, Oliver", user_id: User.find_by(username: "szilvi3").id},
+{title: "Fifth Note", body: "Dinner options: thai soup, chicken tikka, paella", user_id: User.find_by(username: "szilvi4").id},
+{title: "Sixth Note", body: "shopping list: milk, carrots, washing up capsules", user_id: User.find_by(username: "szilvi5").id},
+{title: "Seventh Note", body: "birthday party invitees: Noah, Charlotte, Elyse, Oliver", user_id: User.find_by(username: "szilvi6").id},
+{title: "Eight Note", body: "Dinner options: thai soup, chicken tikka, paella", user_id: User.find_by(username: "szilvi1").id},
+{title: "Ninth Note", body: "shopping list: milk, carrots, washing up capsules", user_id: User.find_by(username: "szilvi2").id},
+{title: "Tenth Note", body: "Dinner options: thai soup, chicken tikka, paella", user_id: User.find_by(username: "szilvi3").id},
+{title:"Eleventh Note", body:"birthday party invitees: Noah, Charlotte, Elyse, Oliver", user_id: User.find_by(username: "szilvi1").id}])

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resource :user, only: [:create, :update, :destroy]
   resources :users, only: :show do
-    resources :notes, only: :index
+    resources :notes, only: [:index, :create]
   end
 
   post "/login", to: "users#login"
