@@ -35,9 +35,9 @@ class UsersController < ApplicationController
         end
     end
 
-    def auto_login 
-        render json: @user
-    end
+    # def auto_login 
+    #     render json: @user
+    # end
 
     private
 

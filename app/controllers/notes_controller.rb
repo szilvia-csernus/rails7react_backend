@@ -11,7 +11,11 @@ class NotesController < ApplicationController
 
   # GET /notes/1
   def show
-    render json: @note
+    if @user != @note.user
+      render json: "Error", status: :unprocessable_entity
+    else
+      render json: @note
+    end
   end
 
   # POST /notes
@@ -28,16 +32,24 @@ class NotesController < ApplicationController
 
   # PATCH/PUT /notes/1
   def update
-    if @note.update(note_params)
-      render json: @note
+    if @user != @note.user
+      render json: "Error", status: :unprocessable_entity
     else
-      render json: @note.errors, status: :unprocessable_entity
+      if @note.update(note_params)
+        render json: @note
+      else
+        render json: @note.errors, status: :unprocessable_entity
+      end
     end
   end
 
   # DELETE /notes/1
   def destroy
-    @note.destroy
+    if @user != @note.user
+      render json: "Error", status: :unprocessable_entity
+    else
+      @note.destroy
+    end
   end
 
   private
