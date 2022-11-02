@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: %i[ show update destroy ]
   before_action :authorized
 
-  # GET /notes
+  # GET /users/user_id/notes
   def index
     @notes = Note.where(user: @user)
 
@@ -18,7 +18,7 @@ class NotesController < ApplicationController
     end
   end
 
-  # POST /notes
+  # POST /users/user_id/notes
   def create
     @note = Note.new(note_params)
     @note.user = @user
